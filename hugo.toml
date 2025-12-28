@@ -1,4 +1,4 @@
-baseURL = "https://example.org/"
-languageCode = "ja-jp"
-title = "nankin-blog"
+baseURL = "https://nankin-22k.github.io/nankin-blog/"
+languageCode = 'ja-jp'
+title = '私の新しいブログ'
 theme = "PaperMod"
