@@ -2,3 +2,30 @@ baseURL = "https://nankin-22k.github.io/nankin-blog/"
 languageCode = 'ja-jp'
 title = "南瓜の家"
 theme = "PaperMod"
+
+[params]
+    # ダークモードの設定（ユーザーが切り替え可能に）
+    defaultTheme = "auto"
+    displayRGBColors = true
+    showCodeCopyButtons = true
+
+    # トップページに表示する自己紹介
+    [params.homeInfoParams]
+        Title = "南瓜の家へようこそ"
+        Content = "ここは南琴（なんきん）の個人ブログです。日々の出来事や興味のあることをのんびり綴っていきます。"
+
+    # ソーシャルリンク（必要なければ削除してください）
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/nankin-22k"
+
+# 上部のメニューバー設定
+[[menu.main]]
+    name = "投稿一覧"
+    url = "posts"
+    weight = 10
+
+[[menu.main]]
+    name = "タグ"
+    url = "tags"
+    weight = 20
