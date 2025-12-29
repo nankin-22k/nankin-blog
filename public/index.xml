@@ -6,43 +6,23 @@
     <description>Recent content on 南瓜の家</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 29 Dec 2025 17:02:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 28 Dec 2025 23:54:34 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/nankin-blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>vsコードを入れた</title>
-      <link>http://localhost:1313/nankin-blog/posts/vscode-success/</link>
-      <pubDate>Mon, 29 Dec 2025 17:02:42 +0900</pubDate>
-      <guid>http://localhost:1313/nankin-blog/posts/vscode-success/</guid>
-      <description>&lt;p&gt;ｖｓコードを入れてみました&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>更新方法について</title>
-      <link>http://localhost:1313/nankin-blog/posts/kousinhouhou-post/</link>
-      <pubDate>Mon, 29 Dec 2025 16:18:47 +0900</pubDate>
-      <guid>http://localhost:1313/nankin-blog/posts/kousinhouhou-post/</guid>
-      <description>&lt;p&gt;本文はここ&lt;/p&gt;</description>
-    </item>
     <item>
       <title>初投稿</title>
       <link>http://localhost:1313/nankin-blog/posts/first-post/</link>
       <pubDate>Sun, 28 Dec 2025 23:54:34 +0900</pubDate>
       <guid>http://localhost:1313/nankin-blog/posts/first-post/</guid>
-      <description>&lt;p&gt;初めての投稿はできることがわからず。&lt;del&gt;歩&lt;/del&gt;あるかないかもわからないまま進めてきました。
-ようやく苦労の道も終わりが見え、私は安堵しています。ですが現れる&lt;strong&gt;修羅の道&lt;/strong&gt;。どうすればこの長い道のりを終える&lt;del&gt;子田&lt;/del&gt;ことができるのでしょうか。&lt;/p&gt;
-&lt;h2 id=&#34;この書き方は&#34;&gt;この書き方は&lt;/h2&gt;
-&lt;p&gt;この書き方はとても楽です&lt;del&gt;ふぁ&lt;/del&gt;、いちいち半角にするのが面倒です。タイピングはミスが多いし問題を羅列しますね。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;あなた&lt;/li&gt;
-&lt;li&gt;ハスター&lt;/li&gt;
-&lt;li&gt;机&lt;/li&gt;
-&lt;li&gt;最後&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;これ引用ね&lt;/p&gt;
-&lt;/blockquote&gt;
+      <description>&lt;p&gt;こんにちは南瓜です。&lt;br&gt;
+この度ブログを開設しました。ブログを作るのは初めてでまだ何を書こうかも決まっていないですが、これから投稿していきたいと思います。よろしくおねがいします&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;これ小さいタイトル&#34;&gt;これ小さいタイトル&lt;/h3&gt;
-&lt;p&gt;大体これで会ってるかな、次はあってるといいな。リンクと画像も試さなきゃ。&lt;/p&gt;</description>
+&lt;h3 id=&#34;このブログについて&#34;&gt;このブログについて&lt;/h3&gt;
+&lt;p&gt;このブログはほぼaiに作ってもらいました。デザインもテーマをアレンジして作っています。（もらいました。）自分にはit知識はほとんどないのですが、結構あっさりこのブログを作れました。aiってすごいですね。&lt;br&gt;
+今まではよくわからなくて手を出せなかったことも、aiを活用すればかなり簡単にできてしまうからどんどん新しいことを試してゆけます。時間があるのもありますけれどね。&lt;br&gt;
+しかもこれすごくて、更新は簡単にできるんです。普通にブログするのと変わらないと思います。無料でできますし、暇でブログしてみたい人はgeminiにブログの作り方教えてもらってください。&lt;br&gt;
+盲目的にaiの言うことに従ってました。はじめは少し調べたりしていたんですが、それだとあまりに時間がかかりすぎるので後半からはほとんど言いなりでした。どっちが道具かわからないですね。これじゃあ。&lt;br&gt;
+デザインもここかえてほしいっていったら、いい感じのコードをここに貼ってって言われるのでいわれるがままにしました。あんまりよくないとはわかっているんですけれど、楽ですからね。&lt;br&gt;
+というわけで以上です。これを読んでる人はいないでしょうけど。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
