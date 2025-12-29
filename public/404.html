@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>404 Page not found | 私の新しいブログ</title>
+<title>404 Page not found | 南瓜の家</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -71,12 +71,13 @@
     }
 
 </script>
+<link rel="stylesheet" href="http://localhost:1313/nankin-blog/css/extended.min.css">
 </head>
 <body class="list" id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/nankin-blog/" accesskey="h" title="私の新しいブログ (Alt + H)">私の新しいブログ</a>
+            <a href="http://localhost:1313/nankin-blog/" accesskey="h" title="南瓜の家 (Alt + H)">南瓜の家</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -101,15 +102,74 @@
             </div>
         </div>
         <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/nankin-blog/posts" title="投稿一覧">
+                    <span>投稿一覧</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/nankin-blog/search/" title="検索 (Alt &#43; /)" accesskey=/>
+                    <span>検索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/nankin-blog/archives/" title="アーカイブ">
+                    <span>アーカイブ</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/nankin-blog/tags" title="タグ">
+                    <span>タグ</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main">
-<div class="not-found">404</div>
+<div class="game-over-screen">
+    <h1 class="error-code">404</h1>
+    <div class="error-msg">つうしんが　とだえました。</div>
+    <a href="/" class="restart-button">▶ リスタートする</a>
+</div>
+
+<style>
+    .game-over-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+    }
+    .error-code {
+        font-size: 100px !important;
+        color: #ff0000 !important;
+        text-shadow: 4px 4px #440000;
+        font-family: 'DotGothic16', sans-serif !important;
+    }
+    .error-msg {
+        font-size: 24px;
+        color: var(--primary);
+        margin: 20px 0 40px 0;
+        font-family: 'DotGothic16', sans-serif !important;
+    }
+    .restart-button {
+        font-size: 20px;
+        color: var(--content);
+        text-decoration: none;
+        animation: game-blink 0.8s infinite;
+        font-family: 'DotGothic16', sans-serif !important;
+    }
+    @keyframes game-blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+</style>
+
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/nankin-blog/">私の新しいブログ</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/nankin-blog/">南瓜の家</a></span> · 
 
     <span>
         Powered by

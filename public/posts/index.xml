@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on 私の新しいブログ</title>
+    <title>Posts on 南瓜の家</title>
     <link>http://localhost:1313/nankin-blog/posts/</link>
-    <description>Recent content in Posts on 私の新しいブログ</description>
+    <description>Recent content in Posts on 南瓜の家</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sun, 28 Dec 2025 23:54:34 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Dec 2025 17:02:42 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/nankin-blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Post</title>
+      <title>vsコードを入れた</title>
+      <link>http://localhost:1313/nankin-blog/posts/vscode-success/</link>
+      <pubDate>Mon, 29 Dec 2025 17:02:42 +0900</pubDate>
+      <guid>http://localhost:1313/nankin-blog/posts/vscode-success/</guid>
+      <description>&lt;p&gt;ｖｓコードを入れてみました&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>更新方法について</title>
+      <link>http://localhost:1313/nankin-blog/posts/kousinhouhou-post/</link>
+      <pubDate>Mon, 29 Dec 2025 16:18:47 +0900</pubDate>
+      <guid>http://localhost:1313/nankin-blog/posts/kousinhouhou-post/</guid>
+      <description>&lt;p&gt;本文はここ&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>初投稿</title>
       <link>http://localhost:1313/nankin-blog/posts/first-post/</link>
       <pubDate>Sun, 28 Dec 2025 23:54:34 +0900</pubDate>
       <guid>http://localhost:1313/nankin-blog/posts/first-post/</guid>
-      <description></description>
+      <description>&lt;p&gt;初めての投稿はできることがわからず。&lt;del&gt;歩&lt;/del&gt;あるかないかもわからないまま進めてきました。
+ようやく苦労の道も終わりが見え、私は安堵しています。ですが現れる&lt;strong&gt;修羅の道&lt;/strong&gt;。どうすればこの長い道のりを終える&lt;del&gt;子田&lt;/del&gt;ことができるのでしょうか。&lt;/p&gt;
+&lt;h2 id=&#34;この書き方は&#34;&gt;この書き方は&lt;/h2&gt;
+&lt;p&gt;この書き方はとても楽です&lt;del&gt;ふぁ&lt;/del&gt;、いちいち半角にするのが面倒です。タイピングはミスが多いし問題を羅列しますね。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;あなた&lt;/li&gt;
+&lt;li&gt;ハスター&lt;/li&gt;
+&lt;li&gt;机&lt;/li&gt;
+&lt;li&gt;最後&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;これ引用ね&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;これ小さいタイトル&#34;&gt;これ小さいタイトル&lt;/h3&gt;
+&lt;p&gt;大体これで会ってるかな、次はあってるといいな。リンクと画像も試さなきゃ。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

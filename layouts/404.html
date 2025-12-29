@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="game-over-screen">
+    <h1 class="error-code">404</h1>
+    <div class="error-msg">つうしんが　とだえました。</div>
+    <a href="/" class="restart-button">▶ リスタートする</a>
+</div>
+
+<style>
+    .game-over-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+    }
+    .error-code {
+        font-size: 100px !important;
+        color: #ff0000 !important;
+        text-shadow: 4px 4px #440000;
+        font-family: 'DotGothic16', sans-serif !important;
+    }
+    .error-msg {
+        font-size: 24px;
+        color: var(--primary);
+        margin: 20px 0 40px 0;
+        font-family: 'DotGothic16', sans-serif !important;
+    }
+    .restart-button {
+        font-size: 20px;
+        color: var(--content);
+        text-decoration: none;
+        animation: game-blink 0.8s infinite;
+        font-family: 'DotGothic16', sans-serif !important;
+    }
+    @keyframes game-blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+</style>
+{{ end }}

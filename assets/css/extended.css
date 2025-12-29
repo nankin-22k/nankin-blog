@@ -1,0 +1,440 @@
+/* 1. フォント設定 */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+/* --- 2. ライトモード（標準時） --- */
+/* :root よりも優先度を上げるため html:root と書きます */
+html:root {
+    --theme: #ffffff !important;
+    --entry: #b8def7 !important;
+    --primary: #32b8dd !important;   /* 見出しの濃い緑 */
+    --secondary: #666666 !important;
+    --tertiary: #eeeeee !important;
+    --content: #2c3e50 !important;   /* 本文の黒 */
+}
+
+/* --- 3. ダークモード（[data-theme=dark] 時） --- */
+/* PaperModの標準設定 [data-theme=dark] を直接狙い撃ちして上書きします */
+html:root[data-theme=dark] {
+    --theme: #000a00 !important;    /* 背景：もっと黒に近い深緑に変えました */
+    --entry: #023602 !important;    /* 記事の箱：背景より少しだけ明るい緑 */
+    --primary: #49ff49 !important;  /* 見出し：鮮やかな緑 */
+    --content: #c1dfbe !important;  /* 本文：白に近い薄い緑（これで読みやすくなります） */
+}
+
+/* --- 4. 見た目への適用 --- */
+
+/* サイト全体のフォントをドットに */
+html, body, h1, h2, h3, h4, h5, h6, p, a, .post-entry, .menu a, .logo a {
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+/* 背景と文字色を強制反映 */
+body {
+    background-color: var(--theme) !important;
+    color: var(--content) !important;
+}
+
+/* 記事のカード */
+.post-entry {
+    background-color: var(--entry) !important;
+    border: 4px double var(--primary) !important; /* 4pxの太さで二重線にする */
+    border-radius: 0px !important;
+    padding: 20px !important; /* 枠の中の余白を少し広げる */
+}
+
+/* 太陽・月マークの化け防止 */
+#theme-toggle svg {
+    font-family: sans-serif !important;
+}
+
+/* 自己紹介（プロフィールモード）の文章 */
+.profile_inner p, 
+.profile_inner .subtitle {
+    color: var(--content) !important;
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+/* 記事一覧の要約（プレビュー）文 */
+.entry-content {
+    color: var(--content) !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* 日付や読了時間などのメタ情報 */
+.post-meta {
+    color: var(--secondary) !important;
+}
+
+/* タグ全体の見た目調整 */
+.post-tags a {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px 10px !important;
+    font-size: 14px !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    border-radius: 0px !important; /* 四角くする */
+    border: 1px solid var(--primary) !important; /* 枠線をメインの緑に */
+    
+    /* 文字の色 */
+    color: var(--primary) !important;
+    /* タグの背景色（最初は透明にしています） */
+    background: transparent !important;
+}
+
+/* マウスを乗せた（ホバーした）時の演出 */
+.post-tags a:hover {
+    background: var(--primary) !important; /* 背景が緑に染まる */
+    color: var(--theme) !important;       /* 文字が背景色（黒や白）に反転する */
+}
+
+/* タグ一覧ページ（/tags/）全体の調整 */
+.terms-tags li a {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 15px !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    
+    /* 枠と文字色の指定 */
+    border: 2px solid var(--primary) !important;
+    color: var(--primary) !important;
+    background: var(--tertiary) !important; /* 少し暗い緑を背景に敷く */
+    
+    border-radius: 0px !important;
+    text-decoration: none !important;
+}
+
+/* タグ一覧でマウスを乗せた時 */
+.terms-tags li a:hover {
+    background: var(--primary) !important;
+    color: var(--theme) !important;
+}
+
+/* タグの横についている「数字（件数）」の色 */
+.terms-tags li a sup {
+    color: var(--content) !important;
+    margin-left: 5px;
+}
+
+/* タグ一覧ページ、カテゴリー一覧ページなどの背景を強制上書き */
+body.terms, 
+main.main,
+.terms-tags {
+    background-color: var(--theme) !important;
+}
+
+.terms-tags li a {
+    /* 背景色を「今の背景（深緑）」と同じにする */
+    background-color: var(--theme) !important;
+    
+    /* 枠線をしっかり出す */
+    border: 2px solid var(--primary) !important;
+    
+    /* 文字をメインの緑にする */
+    color: var(--primary) !important;
+    
+    /* ボタンっぽい影などがもしあれば消す */
+    box-shadow: none !important;
+}
+
+/* マウスを乗せた時の動作はそのまま（緑に反転） */
+.terms-tags li a:hover {
+    background-color: var(--primary) !important;
+    color: var(--theme) !important;
+}
+
+/* --- 1. アニメーションの名前を「cursor-blink」として新しく定義 --- */
+@keyframes cursor-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* --- 2. 記事カード（post-entry）の設定 --- */
+.post-entry {
+    position: relative !important;
+    padding-left: 50px !important; /* 三角を表示するスペースを広く確保 */
+    transition: transform 0.2s ease;
+    overflow: visible !important; /* 三角が枠外にはみ出しても消えないようにする */
+}
+
+/* --- 3. 三角マーク「▶」の初期状態 --- */
+.post-entry::before {
+    content: "▶" !important;
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: var(--primary) !important;
+    font-size: 20px !important;
+    visibility: hidden; /* 普段は完全に消しておく */
+    z-index: 10;
+}
+
+/* --- 4. ホバー（マウスを乗せた）時に点滅させる --- */
+.post-entry:hover::before {
+    visibility: visible !important;
+    animation: cursor-blink 1.0s infinite !important; /* 少しゆっくりにして落ち着かせる */
+    color: var(--primary) !important;
+    opacity: 0.8; /* 100%の明るさではなく、少し透かす */
+}
+
+/* 記事カード自体を少し浮かせる（選択した感） */
+.post-entry:hover {
+    /* 1. 右に少しずらす動きだけで「選択感」を出す */
+    transform: translateX(8px); 
+    
+    /* 2. 背景色は「ほんの少しだけ明るい深緑」に。#002200などの暗い色を指定 */
+    background-color: rgba(0, 255, 0, 0.05) !important; 
+    
+    /* 3. 枠線は白ではなく、標準の緑のままにする */
+    border-color: var(--primary) !important;
+    
+    /* 4. まぶしい影（box-shadow）があれば消す */
+    box-shadow: none !important;
+}
+
+.post-entry:hover .post-title {
+    color: var(--primary) !important; /* ギラつかない緑に固定 */
+}
+
+/* --- 検索画面の調整 --- */
+
+/* 入力欄の背景と文字 */
+/* --- 検索窓のライト・ダーク切り替え --- */
+#searchInput {
+    /* 通常（ライトモード）は白背景に黒文字 */
+    background: #ffffff !important;
+    color: #333333 !important;
+    border: 2px solid #dddddd !important;
+    
+    font-family: 'DotGothic16', sans-serif !important;
+    padding: 10px !important;
+    border-radius: 0px !important;
+}
+
+/* ダークモードの時だけ色を反転させる */
+[data-theme=dark] #searchInput {
+    background: #000a00 !important;
+    color: #00cc00 !important;
+    border: 1px solid var(--primary) !important;
+}
+
+/* 入力欄をクリックした時（フォーカス） */
+#searchInput:focus {
+    border-color: var(--primary) !important;
+    outline: none !important;
+}
+
+/* 入力中の枠の光（フォーカス時）を抑える */
+#searchInput:focus {
+    border-color: var(--primary) !important;
+    outline: none !important;
+}
+
+/* 検索結果のタイトル */
+.search-entry .entry-title {
+    color: var(--primary) !important;
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+/* 検索結果の要約 */
+.search-entry .entry-content {
+    color: var(--content) !important;
+}
+
+/* 検索画面全体の背景が白くなるのを防ぐ */
+body.search, main.main {
+    background-color: var(--theme) !important;
+}
+
+/* --- アーカイブページの調整 --- */
+
+/* 年ごとの区切り（2025, 2024...）の色 */
+.archive-year {
+    margin-top: 40px;
+}
+
+.archive-year h2 {
+    color: var(--primary) !important;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+/* 月ごとのグループ */
+.archive-month {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.2s;
+}
+
+/* アーカイブ内の各記事タイトル */
+.archive-entry {
+    position: relative;
+    padding-left: 40px !important; /* ▶用のスペース */
+}
+
+/* 記事タイトルの色 */
+.archive-entry .entry-name {
+    color: var(--content) !important;
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+/* マウスを乗せた時の「▶」点滅演出 */
+.archive-entry:hover::before {
+    content: "▶";
+    position: absolute;
+    left: 10px;
+    color: var(--primary);
+    animation: cursor-blink 0.8s infinite !important;
+}
+
+/* ホバー時に文字を少し明るく、右にずらす */
+.archive-entry:hover .entry-name {
+    color: var(--primary) !important;
+    padding-left: 10px;
+}
+
+/* --- 404ページ（ゲームオーバー風） --- */
+/* 404ページのページ全体を黒くする */
+.error-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    background-color: var(--theme) !important;
+    text-align: center;
+}
+
+/* "404" の文字を巨大な赤い警告にする */
+.error-404 h1 {
+    font-size: 100px !important;
+    color: #ff0000 !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    text-shadow: 5px 5px #440000;
+    margin-bottom: 20px;
+}
+
+/* "Page not found" の文字を「ゲームオーバー」風に変更するテクニック */
+/* 元の文字を透明にして、新しい文字を浮かび上がらせます */
+.error-404 h1 + div {
+    font-size: 0 !important; /* 元の英文を消す */
+}
+
+.error-404 h1 + div::before {
+    content: "つうしんが　とだえました。";
+    font-size: 24px !important;
+    color: var(--primary) !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    display: block;
+    margin-bottom: 40px;
+}
+
+/* 戻るボタンを「コンティニュー」風に */
+.error-404 a {
+    font-size: 20px !important;
+    color: var(--content) !important;
+    text-decoration: none !important;
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+.error-404 a::before {
+    content: "▶ リスタートする";
+    animation: cursor-blink 0.8s infinite;
+}
+
+/* アーカイブの年（2025）の表示を左寄せにして、余白を削る */
+.archive-year {
+    margin: 20px 0 10px 0 !important;
+    text-align: left !important;
+}
+
+.archive-year h2 {
+    font-size: 28px !important;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block; /* 線を文字の長さに合わせる */
+    padding-right: 20px;
+}
+
+/* 気持ち悪い「月の表示（December）」を整理する */
+.archive-month {
+    display: block !important; /* 中央寄せを解除してブロック化 */
+    margin: 10px 0 !important;
+    font-size: 20px !important;
+    color: var(--secondary) !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    text-align: left !important;
+}
+
+/* 各記事のリスト（entry）の並びを整える */
+.archive-entry {
+    display: flex;
+    align-items: center;
+    height: auto !important;
+    padding: 8px 0 8px 40px !important; /* 左側に余裕を持たせて▶を置く */
+    margin-bottom: 5px;
+}
+
+/* 日付（3日など）を横に並べる */
+.archive-meta {
+    margin-right: 15px;
+    font-size: 16px;
+    min-width: 50px; /* 日付の幅を揃える */
+    display: inline-block;
+}
+
+/* 404ページ全体の背景を黒くし、中央に寄せる */
+body.error-404 {
+    background-color: var(--theme) !important;
+}
+
+body.error-404 .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+/* 404のタイトル（数字）を大きく赤くする */
+body.error-404 h1 {
+    font-size: 80px !important;
+    color: #ff0000 !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    text-shadow: 4px 4px #440000;
+    margin-bottom: 20px;
+}
+
+/* もともとある「404 Page not found」という文字を消して、
+   日本語のメッセージを無理やり差し込む */
+body.error-404 .head-wrapper,
+body.error-404 .not-found {
+    font-size: 0 !important; /* 元の文字を隠す */
+}
+
+body.error-404 .main::after {
+    content: "つうしんが　とだえました。";
+    display: block;
+    font-size: 20px;
+    color: var(--primary);
+    font-family: 'DotGothic16', sans-serif !important;
+    margin-bottom: 40px;
+}
+
+/* ホームへ戻るボタンを点滅する「▶ リスタート」にする */
+body.error-404 #home-link {
+    font-size: 0 !important; /* 元の「Home」を消す */
+}
+
+body.error-404 #home-link::before {
+    content: "▶ リスタートする";
+    font-size: 20px !important;
+    color: var(--content) !important;
+    font-family: 'DotGothic16', sans-serif !important;
+    visibility: visible;
+    animation: cursor-blink 0.8s infinite;
+}

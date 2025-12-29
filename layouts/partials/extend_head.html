@@ -1,0 +1,2 @@
+{{- $common := resources.Get "css/extended.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $common.Permalink }}">

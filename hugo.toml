@@ -3,6 +3,9 @@ languageCode = 'ja-jp'
 title = "南瓜の家"
 theme = "PaperMod"
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [params]
     # ダークモードの設定（ユーザーが切り替え可能に）
     defaultTheme = "auto"
@@ -19,6 +22,8 @@ theme = "PaperMod"
         name = "github"
         url = "https://github.com/nankin-22k"
 
+        assets.disableFingerprinting = true  # これを追加
+
 # 上部のメニューバー設定
 [[menu.main]]
     name = "投稿一覧"
@@ -28,4 +33,27 @@ theme = "PaperMod"
 [[menu.main]]
     name = "タグ"
     url = "tags"
+    weight = 20
+
+    [outputs]
+    home = ["HTML", "RSS", "JSON"] # 検索用のJSONデータを出力するために必要です
+
+[[menu.main]]
+    identifier = "search"
+    name = "検索"
+    url = "/search/"
+    weight = 10
+
+    [params.search]
+    # 検索対象を「メインページ（記事）」だけに限定する設定
+    # これにより、同じ内容が重複して出るのを防ぎます
+    # 検索対象を「posts」フォルダの中身だけに限定する
+    mainSections = ["posts"] 
+    # ページ全体から検索するのではなく、タイトルと本文に絞る
+    searchFields = ["title", "content", "summary"]
+
+    [[menu.main]]
+    identifier = "archives"
+    name = "アーカイブ"
+    url = "/archives/"
     weight = 20
