@@ -438,3 +438,21 @@ body.error-404 #home-link::before {
     visibility: visible;
     animation: cursor-blink 0.8s infinite;
 }
+
+/* マウスが使えるデバイス（PCなど）でのみ実行する設定 */
+@media (pointer: fine) {
+    html, body {
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M14 8h4v4h-4zM14 20h4v4h-4zM8 14h16v4H8z" fill="%23ffffff" stroke="%23555555" stroke-width="1"/></svg>'), auto;
+    }
+
+    a, button, .restart-link {
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M14 8h4v4h-4zM14 20h4v4h-4zM8 14h16v4H8z" fill="%23ffadd6" stroke="%23555555" stroke-width="1"/></svg>'), pointer;
+    }
+}
+
+/* タッチデバイス（スマホ）では標準の挙動にする */
+@media (pointer: coarse) {
+    html, body, a, button {
+        cursor: auto !important;
+    }
+}
