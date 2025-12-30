@@ -160,7 +160,7 @@ main.main,
 
 /* --- 3. 三角マーク「▶」の初期状態 --- */
 .post-entry::before {
-    content: "▶\25B6\FE0E" !important;
+    content: "\25B6\FE0E" !important;
     position: absolute !important;
     left: 15px !important;
     top: 50% !important;
@@ -285,7 +285,7 @@ body.search, main.main {
 
 /* マウスを乗せた時の「▶」点滅演出 */
 .archive-entry:hover::before {
-    content: "▶\25B6\FE0E";
+    content: "\25B6\FE0E";
     position: absolute;
     left: 10px;
     color: var(--primary);
