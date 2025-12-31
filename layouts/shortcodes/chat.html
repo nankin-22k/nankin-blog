@@ -1,0 +1,11 @@
+<div class="chat-balloon {{ .Get "side" | default "left" }}">
+    <div class="chat-icon">
+        {{- $img := .Get "img" -}}
+        {{- $img_url := resources.Get $img | default (resources.Get (printf "static%s" $img)) | default $img -}}
+        <img src="{{ $img | relURL }}" alt="{{ .Get "name" }}">
+        <span class="chat-name">{{ .Get "name" }}</span>
+    </div>
+    <div class="chat-text">
+        {{ .Inner | markdownify }}
+    </div>
+</div>

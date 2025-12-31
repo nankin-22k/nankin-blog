@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>タグ1 on 南瓜の家</title>
+    <link>http://localhost:1313/nankin-blog/tags/%E3%82%BF%E3%82%B01/</link>
+    <description>Recent content in タグ1 on 南瓜の家</description>
+    <generator>Hugo -- 0.153.2</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 31 Dec 2025 15:43:35 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/nankin-blog/tags/%E3%82%BF%E3%82%B01/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chat Post</title>
+      <link>http://localhost:1313/nankin-blog/posts/chat-post/</link>
+      <pubDate>Wed, 31 Dec 2025 15:43:35 +0900</pubDate>
+      <guid>http://localhost:1313/nankin-blog/posts/chat-post/</guid>
+      <description>&lt;p&gt;チャットを導入します。
+&lt;div class=&#34;chat-balloon left&#34;&gt;
+    &lt;div class=&#34;chat-icon&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/nankin-blog/images/my-icon.png&#34; alt=&#34;自分&#34;&gt;
+        &lt;span class=&#34;chat-name&#34;&gt;自分&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;chat-text&#34;&gt;
+        今日はHugoのカスタマイズをしているよ。
+    &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;chat-balloon right&#34;&gt;
+    &lt;div class=&#34;chat-icon&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/nankin-blog/images/tulpa-icon.png&#34; alt=&#34;タルパ&#34;&gt;
+        &lt;span class=&#34;chat-name&#34;&gt;タルパ&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;chat-text&#34;&gt;
+        ショートコードを使うと便利だね。
+    &lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

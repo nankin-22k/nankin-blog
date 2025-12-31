@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on 南瓜の家</title>
-    <link>http://localhost:1313/nankin-blog/posts/</link>
-    <description>Recent content in Posts on 南瓜の家</description>
+    <title>サイトについて on 南瓜の家</title>
+    <link>http://localhost:1313/nankin-blog/tags/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</link>
+    <description>Recent content in サイトについて on 南瓜の家</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 31 Dec 2025 15:43:35 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/nankin-blog/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>チャットを導入するよ</title>
-      <link>http://localhost:1313/nankin-blog/posts/chat-post/</link>
-      <pubDate>Wed, 31 Dec 2025 15:43:35 +0900</pubDate>
-      <guid>http://localhost:1313/nankin-blog/posts/chat-post/</guid>
-      <description>&lt;p&gt;チャットを導入します。
-&lt;div class=&#34;chat-balloon left&#34;&gt;
-    &lt;div class=&#34;chat-icon&#34;&gt;&lt;img src=&#34;http://localhost:1313/nankin-blog/images/hidarigao.png&#34; alt=&#34;南瓜&#34;&gt;
-        &lt;span class=&#34;chat-name&#34;&gt;南瓜&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;chat-text&#34;&gt;
-        今日はHugoのカスタマイズをしているよ。
-    &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;div class=&#34;chat-balloon right&#34;&gt;
-    &lt;div class=&#34;chat-icon&#34;&gt;&lt;img src=&#34;http://localhost:1313/nankin-blog/images/seiji_souridaijin_woman_kaiken.png&#34; alt=&#34;なのめ&#34;&gt;
-        &lt;span class=&#34;chat-name&#34;&gt;なのめ&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;chat-text&#34;&gt;
-        ショートコードを使うと便利だね。
-    &lt;/div&gt;
-&lt;/div&gt;</description>
-    </item>
+    <lastBuildDate>Sun, 28 Dec 2025 23:54:34 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/nankin-blog/tags/%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>初投稿</title>
       <link>http://localhost:1313/nankin-blog/posts/first-post/</link>

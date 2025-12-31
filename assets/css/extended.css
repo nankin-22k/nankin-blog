@@ -10,6 +10,9 @@ html:root {
     --secondary: #666666 !important;
     --tertiary: #eeeeee !important;
     --content: #2c3e50 !important;   /* 本文の黒 */
+    --chat_wakusen: #ff0303 !important; /*チャットの枠線の色*/
+    --nankincoler: #fbfbfb !important;   /*南瓜カラー*/ 
+    --nanomecoler: #d60000 !important;  /*なむちカラー*/
 }
 
 /* --- 3. ダークモード（[data-theme=dark] 時） --- */
@@ -19,6 +22,9 @@ html:root[data-theme=dark] {
     --entry: #023602 !important;    /* 記事の箱：背景より少しだけ明るい緑 */
     --primary: #49ff49 !important;  /* 見出し：鮮やかな緑 */
     --content: #c1dfbe !important;  /* 本文：白に近い薄い緑（これで読みやすくなります） */
+    --chat_wakusen: #f40000 !important;
+    --nankincoler: #e2007c !important;   /*南瓜カラー*/ 
+    --nanomecoler: #2f075a !important;  /*なむちカラー*/
 }
 
 /* --- 4. 見た目への適用 --- */
@@ -439,4 +445,51 @@ body.error-404 #home-link::before {
     animation: cursor-blink 0.8s infinite;
 }
 
+/* 共通設定 */
+.chat-balloon {
+    display: flex;
+    margin-bottom: 2px;
+    align-items: flex-start;
+}
+
+.chat-icon {
+    flex-shrink: 0;
+    text-align: center;
+    width: 70px; /* アイコンのサイズ */
+}
+
+.chat-icon img {
+    width: 50px !important; /* PaperModの画像スタイルを上書き */
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto 5px !important;
+}
+
+.chat-name {
+    font-size: 0.7em;
+    color: var(--secondary);
+    display: block;
+}
+
+.chat-text {
+    position: relative;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: var(--theme); /* 背景色 */
+     border: 4px double var(--primary) !important; /* 4pxの太さで二重線にする */
+    margin: 10px 20px;
+    max-width: 70%;
+    line-height: 1.5;
+}
+
+
+/* 右側（タルパ用）のスタイル */
+.chat-balloon.right {
+    flex-direction: row-reverse;
+}
+
+.chat-balloon.right .chat-text {
+    margin: 10px 15px 0 0;
+    background: var(--theme); /* タルパ側の色（お好みで変えてください） */
+}
 
