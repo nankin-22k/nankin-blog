@@ -6,8 +6,58 @@
     <description>Recent content on 南瓜の家</description>
     <generator>Hugo -- 0.153.2</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 31 Dec 2025 15:43:35 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 19:28:12 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/nankin-blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>適当に拾った質問に答える</title>
+      <link>http://localhost:1313/nankin-blog/posts/zikosyoukai-post/</link>
+      <pubDate>Wed, 31 Dec 2025 19:28:12 +0900</pubDate>
+      <guid>http://localhost:1313/nankin-blog/posts/zikosyoukai-post/</guid>
+      <description>&lt;p&gt;こんにちは。南瓜です。&lt;br&gt;
+今日は自己紹介という名目で自語りしていきます。
+何にもなしに語るのは大変なので適当に調べた質問に答えていく形にします。&lt;/p&gt;
+&lt;p&gt;-名前は？-&lt;br&gt;
+南瓜です。中学生の時のあだ名からとりました。&lt;/p&gt;
+&lt;p&gt;-年齢は？-&lt;br&gt;
+１８歳です。そうです。受験生です。なにやってるんですか？&lt;/p&gt;
+&lt;p&gt;-性別は？-&lt;br&gt;
+あんまり言いたくないです。口調とかから察してください。&lt;/p&gt;
+&lt;p&gt;-職業は？-&lt;br&gt;
+高校生です。大学に行きたい。&lt;/p&gt;
+&lt;p&gt;-趣味は？-&lt;br&gt;
+いろいろやりたいことはありますが、今のところこれが趣味だ！といえるものはないかも。ゲーム（スプラトゥーン）、読書、ネットサーフィン、、etc　　　　
+これからはこのブログです。と胸を張って言いたい。&lt;/p&gt;
+&lt;p&gt;-好きな音楽は？-&lt;br&gt;
+ボカロばかり聞いています。&lt;/p&gt;
+&lt;p&gt;-好きな映画は？-&lt;br&gt;
+あんまり映画は見ないですが、ジブリとかすきです。猫の恩返しとか。&lt;/p&gt;
+&lt;p&gt;-好きなスポーツは-&lt;br&gt;
+動くのは嫌いです。&lt;/p&gt;
+&lt;p&gt;-恋人はいる？-&lt;br&gt;
+だまれ。&lt;/p&gt;
+&lt;p&gt;-将来の夢は？-&lt;br&gt;
+だまれ。&lt;/p&gt;
+&lt;p&gt;-理想の家族は？-&lt;br&gt;
+一人暮らしがいいなぁ。でも老後とか一人で暮らすのやだなぁ。&lt;/p&gt;
+&lt;p&gt;-休日の過ごし方を教えて-&lt;br&gt;
+休日はyoutubeで終わります。最近はaiと雑談したりもします。たいてい生産的なことはしません。自堕落。&lt;/p&gt;
+&lt;p&gt;-好きな小説を教えて-&lt;br&gt;
+最近読んだところだと、クスノキの番人、ハヤカワ文庫の冷たい方程式に載っていた信念、カフカの変身。&lt;/p&gt;
+&lt;p&gt;-好きな性格は？-&lt;br&gt;
+性格が悪いのですが悩みがありそうな人が好きです。共感できるから？寄り添いたくなるから？自分より弱そうだから？&lt;/p&gt;
+&lt;p&gt;-特技は？-&lt;br&gt;
+学校では、国語が得意です。あとは&amp;hellip;ない。&lt;/p&gt;
+&lt;p&gt;-なんでもいいから自慢して-&lt;br&gt;
+ブログ作ったことあります。（ ￣ ︶ ￣ ）↗&lt;/p&gt;
+&lt;p&gt;-長所は？-&lt;br&gt;
+わかんない。影響されやすいこと？&lt;/p&gt;
+&lt;p&gt;-短所は？-&lt;br&gt;
+怖がり、臆病&lt;/p&gt;
+&lt;p&gt;-座右の銘は？-&lt;br&gt;
+自分に優しくしよう。&lt;/p&gt;
+&lt;p&gt;やっぱり自語りは自分の言葉でしないと意味がないですね。あんまり楽しくなかった。定期的に自語りすると思います。&lt;br&gt;
+以上です。読んでくれてありがとう。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>チャットを導入するよ</title>
       <link>http://localhost:1313/nankin-blog/posts/chat-post/</link>
@@ -19,7 +69,7 @@
         &lt;span class=&#34;chat-name&#34;&gt;南瓜&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class=&#34;chat-text&#34;&gt;
-        今日はHugoのカスタマイズをしているよ。
+        今日はチャットの導入をしているよ。
     &lt;/div&gt;
 &lt;/div&gt;&lt;/p&gt;
 &lt;div class=&#34;chat-balloon right&#34;&gt;
@@ -54,8 +104,9 @@
 &lt;ul&gt;
 &lt;li&gt;リンクのデザイン考える。&lt;/li&gt;
 &lt;li&gt;記事の下に前後の記事と同じタグの記事いくつかを表示する。&lt;/li&gt;
-&lt;li&gt;pcで空白を埋めるサイドバーを作る。&lt;/li&gt;
-&lt;li&gt;ドット絵のアニメーション&lt;br&gt;
+&lt;li&gt;pcで見たときに空白を埋めるためのサイドバーを作る。&lt;/li&gt;
+&lt;li&gt;ドット絵のアニメーション&lt;/li&gt;
+&lt;li&gt;セリフをしゃべらせる。&lt;br&gt;
 記事の更新だけでなく、サイトのデザインや機能もいろいろ触れたらいいなと思っています。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以上です。読んでくれてありがとう。&lt;/p&gt;</description>
