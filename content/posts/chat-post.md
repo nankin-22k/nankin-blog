@@ -1,10 +1,12 @@
 ---
 title: "チャットを導入するよ"
 date: 2025-12-31T15:43:35+09:00
-draft: ture
+draft: true
 tags:
   - ""
   - "サイト制作"
+categories:
+  - "カテゴリー"
 ---
 チャットを導入します。
 {{< chat name="南瓜" img="/images/hidarigao.png" side="left" >}}

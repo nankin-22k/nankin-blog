@@ -2,42 +2,41 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
 /* --- 2. ライトモード（標準時） --- */
-/* :root よりも優先度を上げるため html:root と書きます */
-html:root {
-    --theme: #ffffff !important;
-    --entry: #b8def7 !important;
-    --primary: #32b8dd !important;   /* 見出しの濃い緑 */
-    --secondary: #666666 !important;
-    --tertiary: #eeeeee !important;
-    --content: #2c3e50 !important;   /* 本文の黒 */
-    --chat_wakusen: #ff0303 !important; /*チャットの枠線の色*/
-    --nankincoler: #fbfbfb !important;   /*南瓜カラー*/ 
-    --nanomecoler: #d60000 !important;  /*なむちカラー*/
+:root {
+    --theme: #ffffff ;
+    --entry: #b8def7 ;
+    --primary: #32b8dd ;   /* 見出しの濃い緑 */
+    --secondary: #666666 ;
+    --tertiary: #eeeeee ;
+    --content: #2c3e50 ;   /* 本文の黒 */
+    --chat_wakusen: #ff0303 ; /*チャットの枠線の色*/
+    --nankincoler: #fbfbfb ;   /*南瓜カラー*/ 
+    --nanomecoler: #d60000 ;  /*なむちカラー*/
 }
 
 /* --- 3. ダークモード（[data-theme=dark] 時） --- */
-/* PaperModの標準設定 [data-theme=dark] を直接狙い撃ちして上書きします */
-html:root[data-theme=dark] {
-    --theme: #000a00 !important;    /* 背景：もっと黒に近い深緑に変えました */
-    --entry: #023602 !important;    /* 記事の箱：背景より少しだけ明るい緑 */
-    --primary: #49ff49 !important;  /* 見出し：鮮やかな緑 */
-    --content: #c1dfbe !important;  /* 本文：白に近い薄い緑（これで読みやすくなります） */
-    --chat_wakusen: #f40000 !important;
-    --nankincoler: #e2007c !important;   /*南瓜カラー*/ 
-    --nanomecoler: #2f075a !important;  /*なむちカラー*/
+:root[data-theme=dark] {
+    --theme: #000a00 ;    /* 背景：もっと黒に近い深緑に変えました */
+    --entry: #023602 ;    /* 記事の箱：背景より少しだけ明るい緑 */
+    --primary: #49ff49 ;  /* 見出し：鮮やかな緑 */
+    --content: #c1dfbe ;  /* 本文：白に近い薄い緑（これで読みやすくなります） */
+    --chat_wakusen: #f40000 ;
+    --tertiary: #1a2a1a ;  /* ダークモード用の背景色を暗く固定 */
+    --nankincoler: #e2007c ;   /*南瓜カラー*/ 
+    --nanomecoler: #2f075a ;  /*なむちカラー*/
 }
 
 /* --- 4. 見た目への適用 --- */
 
 /* サイト全体のフォントをドットに */
 html, body, h1, h2, h3, h4, h5, h6, p, a, .post-entry, .menu a, .logo a {
-    font-family: 'DotGothic16', sans-serif !important;
+    font-family: 'DotGothic16', sans-serif ;
 }
 
 /* 背景と文字色を強制反映 */
 body {
-    background-color: var(--theme) !important;
-    color: var(--content) !important;
+    background-color: var(--theme) ;
+    color: var(--content) ;
 }
 
 /* 記事のカード */
@@ -493,3 +492,88 @@ body.error-404 #home-link::before {
     background: var(--theme); /* タルパ側の色（お好みで変えてください） */
 }
 
+/* --- 独自の区切り線（点線） --- */
+.footer-divider {
+    margin: 40px 0 20px 0;
+    border-top: 4px dotted var(--primary);
+}
+
+/* --- 前後の記事ナビゲーション（ステータスバー風） --- */
+
+.paginav {
+    margin: 40px 0 !important;
+    background: transparent !important;
+    display: flex;
+    gap: 15px; /* 箱同士を離す */
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.paginav a {
+    position: relative;
+    padding: 15px 20px !important;
+    background: var(--theme) !important;
+
+    outline: 2px solid var(--primary);
+    outline-offset: -4px;
+    border: 2px solid var(--primary) !important;
+    width: 50%;
+}
+
+
+.paginav a:hover {
+    background: var(--entry) !important;
+}
+
+.paginav a:hover, 
+.paginav a:focus,
+.paginav a span:hover {
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+
+/* 「前の記事」「次の記事」のラベルをバッジ風にする */
+.paginav .title {
+    font-size: 11px !important;
+    color: var(--theme) !important;
+    background: var(--primary);
+    display: inline-block;
+    padding: 0 8px;
+    margin-bottom: 8px;
+    position: absolute;
+    top: -12px;
+    left: 10px;
+}
+
+/* 関連記事（related.html）も同じにならないように調整 */
+/* single.html側のhrを消して、こちらで「点線」の区切りにする */
+.related-content {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.related-content ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 横に2つ並べる */
+    gap: 10px;
+    list-style: none !important;
+}
+
+.related-content li {
+    background: var(--tertiary);
+    padding: 10px;
+    border-left: 5px solid var(--primary); /* 左側だけに色をつけてアクセントに */
+}
+
+/* 関連記事もホバーで少しだけ色を変える（下線は出さない） */
+.related-content li:hover {
+    background: var(--entry) !important;
+}
+
+/* スマホ用（1列にする） */
+@media screen and (max-width: 768px) {
+    .related-content ul {
+        grid-template-columns: 1fr;
+    }
+}

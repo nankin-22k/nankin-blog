@@ -3,57 +3,74 @@ languageCode = 'ja-jp'
 title = "南瓜の家"
 theme = "PaperMod"
 
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
 [markup.goldmark.renderer]
-  unsafe = true
+    unsafe = true
 
 [params]
-    # ダークモードの設定（ユーザーが切り替え可能に）
     defaultTheme = "auto"
     displayRGBColors = true
     showCodeCopyButtons = true
+    assets.disableFingerprinting = true
+    showPostNavLinks = true
+    ShowRelatedContent = true
 
-    # トップページに表示する自己紹介
     [params.homeInfoParams]
         Title = "南瓜の家へようこそ"
         Content = "ここは南琴（なんきん）の個人ブログです。日々の出来事や興味のあることをのんびり綴っていきます。"
 
-    # ソーシャルリンク（必要なければ削除してください）
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/nankin-22k"
 
-        assets.disableFingerprinting = true  # これを追加
+    [params.search]
+        mainSections = ["posts"]
+        searchFields = ["title", "content", "summary"]
 
-# 上部のメニューバー設定
+# --- メニュー設定 ---
 [[menu.main]]
     name = "投稿一覧"
     url = "posts"
     weight = 10
 
 [[menu.main]]
-    name = "タグ"
-    url = "tags"
+    name = "カテゴリー"
+    url = "categories"
     weight = 20
 
-    [outputs]
-    home = ["HTML", "RSS", "JSON"] # 検索用のJSONデータを出力するために必要です
+[[menu.main]]
+    name = "タグ"
+    url = "tags"
+    weight = 30
+
+[[menu.main]]
+    identifier = "archives"
+    name = "アーカイブ"
+    url = "/archives/"
+    weight = 40
 
 [[menu.main]]
     identifier = "search"
     name = "検索"
     url = "/search/"
-    weight = 10
+    weight = 50
 
-    [params.search]
-    # 検索対象を「メインページ（記事）」だけに限定する設定
-    # これにより、同じ内容が重複して出るのを防ぎます
-    # 検索対象を「posts」フォルダの中身だけに限定する
-    mainSections = ["posts"] 
-    # ページ全体から検索するのではなく、タイトルと本文に絞る
-    searchFields = ["title", "content", "summary"]
+[related]
+    threshold = 0
+    includeNewer = true
+    toLower = true
 
-    [[menu.main]]
-    identifier = "archives"
-    name = "アーカイブ"
-    url = "/archives/"
-    weight = 20
+    [[related.indices]]
+        name = "keywords"
+        weight = 100
+    [[related.indices]]
+        name = "categories"
+        weight = 80
+    [[related.indices]]
+        name = "tags"
+        weight = 50
+    [[related.indices]]
+        name = "date"
+        weight = 10

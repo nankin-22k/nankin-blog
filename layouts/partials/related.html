@@ -1,0 +1,16 @@
+{{- $related := .Site.RegularPages.Related . | first 5 -}}
+{{- with $related -}}
+<div class="related-content" style="margin-top: 50px;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">関連記事</h2>
+    <ul style="list-style: none; padding: 0;">
+        {{- range . -}}
+        <li style="margin-bottom: 0.5rem;">
+            <a href="{{ .RelPermalink }}" style="text-decoration: none; color: var(--primary);">
+                {{ .Title }}
+            </a>
+            <small style="margin-left: 10px; color: var(--secondary);">({{ .Date.Format "2006-01-02" }})</small>
+        </li>
+        {{- end -}}
+    </ul>
+</div>
+{{- end -}}
