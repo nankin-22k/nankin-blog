@@ -58,7 +58,7 @@ theme = "PaperMod"
     weight = 50
 
 [related]
-    threshold = 0
+    threshold = 60
     includeNewer = true
     toLower = true
 

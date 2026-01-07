@@ -6,7 +6,7 @@ tags:
   - ""
   - "サイト制作"
 categories:
-  - "カテゴリー"
+  - "技術"
 ---
 チャットを導入します。
 {{< chat name="南瓜" img="/images/hidarigao.png" side="left" >}}
