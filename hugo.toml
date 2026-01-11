@@ -74,3 +74,6 @@ theme = "PaperMod"
     [[related.indices]]
         name = "date"
         weight = 10
+
+[permalinks]
+  posts = "/posts/:slug/"
