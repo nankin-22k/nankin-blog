@@ -1,165 +1,78 @@
-/* 1. フォント設定 */
+/* =========================================
+   1. フォント設定 & アニメーション定義
+   ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
-/* --- 2. ライトモード（標準時） --- */
-:root {
-    --theme: #ffffff ;
-    --entry: #b8def7 ;
-    --primary: #32b8dd ;   /* 見出しの濃い緑 */
-    --secondary: #666666 ;
-    --tertiary: #eeeeee ;
-    --content: #2c3e50 ;   /* 本文の黒 */
-    --chat_wakusen: #ff0303 ; /*チャットの枠線の色*/
-}
-
-/* --- 3. ダークモード（[data-theme=dark] 時） --- */
-:root[data-theme=dark] {
-    --theme: #000a00 ;    /* 背景：もっと黒に近い深緑に変えました */
-    --entry: #023602 ;    /* 記事の箱：背景より少しだけ明るい緑 */
-    --primary: #49ff49 ;  /* 見出し：鮮やかな緑 */
-    --content: #c1dfbe ;  /* 本文：白に近い薄い緑（これで読みやすくなります） */
-    --chat_wakusen: #f40000 ;
-    --tertiary: #1a2a1a ;  /* ダークモード用の背景色を暗く固定 */
-}
-
-/* --- 4. 見た目への適用 --- */
-
-/* サイト全体のフォントをドットに */
-html, body, h1, h2, h3, h4, h5, h6, p, a, .post-entry, .menu a, .logo a {
-    font-family: 'DotGothic16', sans-serif ;
-}
-
-/* 背景と文字色を強制反映 */
-body {
-    background-color: var(--theme) ;
-    color: var(--content) ;
-}
-
-/* 記事のカード */
-.post-entry {
-    background-color: var(--entry) !important;
-    border: 4px double var(--primary) !important; /* 4pxの太さで二重線にする */
-    border-radius: 0px !important;
-    padding: 20px !important; /* 枠の中の余白を少し広げる */
-}
-
-/* 太陽・月マークの化け防止 */
-#theme-toggle svg {
-    font-family: sans-serif !important;
-}
-
-/* 自己紹介（プロフィールモード）の文章 */
-.profile_inner p, 
-.profile_inner .subtitle {
-    color: var(--content) !important;
-    font-family: 'DotGothic16', sans-serif !important;
-}
-
-/* 記事一覧の要約（プレビュー）文 */
-.entry-content {
-    color: var(--content) !important;
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-}
-
-/* 日付や読了時間などのメタ情報 */
-.post-meta {
-    color: var(--secondary) !important;
-}
-
-/* タグ全体の見た目調整 */
-.post-tags a {
-    display: inline-block;
-    margin-right: 5px;
-    padding: 2px 10px !important;
-    font-size: 14px !important;
-    font-family: 'DotGothic16', sans-serif !important;
-    border-radius: 0px !important; /* 四角くする */
-    border: 1px solid var(--primary) !important; /* 枠線をメインの緑に */
-    
-    /* 文字の色 */
-    color: var(--primary) !important;
-    /* タグの背景色（最初は透明にしています） */
-    background: transparent !important;
-}
-
-/* マウスを乗せた（ホバーした）時の演出 */
-.post-tags a:hover {
-    background: var(--primary) !important; /* 背景が緑に染まる */
-    color: var(--theme) !important;       /* 文字が背景色（黒や白）に反転する */
-}
-
-/* タグ一覧ページ（/tags/）全体の調整 */
-.terms-tags li a {
-    display: inline-block;
-    margin: 10px;
-    padding: 5px 15px !important;
-    font-family: 'DotGothic16', sans-serif !important;
-    
-    /* 枠と文字色の指定 */
-    border: 2px solid var(--primary) !important;
-    color: var(--primary) !important;
-    background: var(--tertiary) !important; /* 少し暗い緑を背景に敷く */
-    
-    border-radius: 0px !important;
-    text-decoration: none !important;
-}
-
-/* タグ一覧でマウスを乗せた時 */
-.terms-tags li a:hover {
-    background: var(--primary) !important;
-    color: var(--theme) !important;
-}
-
-/* タグの横についている「数字（件数）」の色 */
-.terms-tags li a sup {
-    color: var(--content) !important;
-    margin-left: 5px;
-}
-
-/* タグ一覧ページ、カテゴリー一覧ページなどの背景を強制上書き */
-body.terms, 
-main.main,
-.terms-tags {
-    background-color: var(--theme) !important;
-}
-
-.terms-tags li a {
-    /* 背景色を「今の背景（深緑）」と同じにする */
-    background-color: var(--theme) !important;
-    
-    /* 枠線をしっかり出す */
-    border: 2px solid var(--primary) !important;
-    
-    /* 文字をメインの緑にする */
-    color: var(--primary) !important;
-    
-    /* ボタンっぽい影などがもしあれば消す */
-    box-shadow: none !important;
-}
-
-/* マウスを乗せた時の動作はそのまま（緑に反転） */
-.terms-tags li a:hover {
-    background-color: var(--primary) !important;
-    color: var(--theme) !important;
-}
-
-/* --- 1. アニメーションの名前を「cursor-blink」として新しく定義 --- */
 @keyframes cursor-blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-/* --- 2. 記事カード（post-entry）の設定 --- */
-.post-entry {
-    position: relative !important;
-    padding-left: 50px !important; /* 三角を表示するスペースを広く確保 */
-    transition: transform 0.2s ease;
-    overflow: visible !important; /* 三角が枠外にはみ出しても消えないようにする */
+/* =========================================
+   2. 変数定義 (カラーパレット)
+   ========================================= */
+/* ライトモード（標準） */
+:root {
+    --theme: #ffffff;
+    --entry: #b8def7;
+    --primary: #32b8dd;       /* メインカラー（濃い水色/緑） */
+    --secondary: #666666;     /* サブテキスト */
+    --tertiary: #eeeeee;      /* 薄いグレー */
+    --content: #2c3e50;       /* 本文色 */
+    --chat_wakusen: #ff0303;  /* チャット枠線 */
 }
 
-/* --- 3. 三角マーク「▶」の初期状態 --- */
+/* ダークモード */
+:root[data-theme=dark] {
+    --theme: #000a00;         /* 背景：深い緑/黒 */
+    --entry: #023602;         /* 記事背景 */
+    --primary: #49ff49;       /* ネオン緑 */
+    --content: #c1dfbe;       /* 本文：薄い緑 */
+    --tertiary: #1a2a1a;      /* サブ背景 */
+    --chat_wakusen: #f40000;
+}
+
+/* =========================================
+   3. 全体共通設定 (Base)
+   ========================================= */
+/* フォントの一括適用 */
+html, body, h1, h2, h3, h4, h5, h6, p, a, 
+.post-entry, .menu a, .logo a, 
+.profile_inner p, .profile_inner .subtitle,
+.entry-content, .post-tags a, .terms-tags li a,
+.search-entry .entry-title, .archive-year h2, 
+.archive-entry .entry-name, .error-404 h1,
+#searchInput {
+    font-family: 'DotGothic16', sans-serif !important;
+}
+
+/* 背景と文字色の基本設定 */
+html, body, #top, main.main, .page-main {
+    background-color: var(--theme) !important;
+    color: var(--content) !important;
+}
+
+/* リンクの下線を消す（必要に応じて） */
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   4. 記事一覧・カード (.post-entry)
+   ========================================= */
+.post-entry {
+    background-color: var(--entry) !important;
+    border: 4px double var(--primary) !important;
+    border-radius: 0px !important;
+    padding: 20px 20px 20px 50px !important; /* 左余白を確保 */
+    margin-bottom: 20px;
+    position: relative !important;
+    transition: transform 0.2s ease, background-color 0.2s;
+    overflow: visible !important;
+}
+
+/* 三角マーク「▶」 */
 .post-entry::before {
     content: "\25B6\FE0E" !important;
     position: absolute !important;
@@ -168,123 +81,177 @@ main.main,
     transform: translateY(-50%) !important;
     color: var(--primary) !important;
     font-size: 20px !important;
-    visibility: hidden; /* 普段は完全に消しておく */
+    visibility: hidden;
     z-index: 10;
 }
 
-/* --- 4. ホバー（マウスを乗せた）時に点滅させる --- */
-.post-entry:hover::before {
-    visibility: visible !important;
-    animation: cursor-blink 1.0s infinite !important; /* 少しゆっくりにして落ち着かせる */
-    color: var(--primary) !important;
-    opacity: 0.8; /* 100%の明るさではなく、少し透かす */
-}
-
-/* 記事カード自体を少し浮かせる（選択した感） */
+/* ホバー時の挙動 */
 .post-entry:hover {
-    /* 1. 右に少しずらす動きだけで「選択感」を出す */
     transform: translateX(8px); 
-    
-    /* 2. 背景色は「ほんの少しだけ明るい深緑」に。#002200などの暗い色を指定 */
     background-color: rgba(0, 255, 0, 0.05) !important; 
-    
-    /* 3. 枠線は白ではなく、標準の緑のままにする */
     border-color: var(--primary) !important;
-    
-    /* 4. まぶしい影（box-shadow）があれば消す */
     box-shadow: none !important;
 }
 
-.post-entry:hover .post-title {
-    color: var(--primary) !important; /* ギラつかない緑に固定 */
+.post-entry:hover::before {
+    visibility: visible !important;
+    animation: cursor-blink 1.0s infinite !important;
+    opacity: 0.8;
 }
 
-/* --- 検索画面の調整 --- */
+.post-entry:hover .post-title {
+    color: var(--primary) !important;
+}
 
-/* 入力欄の背景と文字 */
-/* --- 検索窓のライト・ダーク切り替え --- */
+/* メタ情報（日付など） */
+.post-meta {
+    color: var(--secondary) !important;
+}
+
+/* 記事要約 */
+.entry-content {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* =========================================
+   5. タグ (.post-tags, .terms-tags)
+   ========================================= */
+/* 記事下部のタグ */
+.post-tags a {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px 10px !important;
+    font-size: 14px !important;
+    border-radius: 0px !important;
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+    background: transparent !important;
+    transition: all 0.2s;
+}
+
+.post-tags a:hover {
+    background: var(--primary) !important;
+    color: var(--theme) !important;
+}
+
+/* タグ一覧ページ (/tags/) */
+.terms-tags li a {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 15px !important;
+    border: 2px solid var(--primary) !important;
+    color: var(--primary) !important;
+    background: var(--theme) !important; /* 背景色と同化 */
+    border-radius: 0px !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.terms-tags li a:hover {
+    background: var(--primary) !important;
+    color: var(--theme) !important;
+}
+
+.terms-tags li a sup {
+    color: var(--content) !important;
+    margin-left: 5px;
+}
+
+/* タグページの背景強制 */
+body.terms, .terms-tags {
+    background-color: var(--theme) !important;
+}
+
+/* =========================================
+   6. 検索画面 (#searchInput, .search-entry)
+   ========================================= */
+/* 検索ボックス */
 #searchInput {
-    /* 通常（ライトモード）は白背景に黒文字 */
-    background: #ffffff !important;
-    color: #333333 !important;
+    background: var(--theme) !important; /* 変数で対応可能なら統一 */
+    color: var(--content) !important;    /* 変数化推奨だが元の指定を尊重 */
     border: 2px solid #dddddd !important;
-    
-    font-family: 'DotGothic16', sans-serif !important;
     padding: 10px !important;
     border-radius: 0px !important;
 }
 
-/* ダークモードの時だけ色を反転させる */
+/* ライトモード固有の上書きが必要な場合 */
+:root:not([data-theme=dark]) #searchInput {
+    background: #ffffff !important;
+    color: #333333 !important;
+}
+
+/* ダークモード */
 [data-theme=dark] #searchInput {
     background: #000a00 !important;
     color: #00cc00 !important;
     border: 1px solid var(--primary) !important;
 }
 
-/* 入力欄をクリックした時（フォーカス） */
 #searchInput:focus {
     border-color: var(--primary) !important;
     outline: none !important;
 }
 
-/* 入力中の枠の光（フォーカス時）を抑える */
-#searchInput:focus {
-    border-color: var(--primary) !important;
-    outline: none !important;
-}
-
-/* 検索結果のタイトル */
+/* 検索結果 */
 .search-entry .entry-title {
     color: var(--primary) !important;
-    font-family: 'DotGothic16', sans-serif !important;
 }
 
-/* 検索結果の要約 */
-.search-entry .entry-content {
-    color: var(--content) !important;
-}
-
-/* 検索画面全体の背景が白くなるのを防ぐ */
-body.search, main.main {
+/* 検索画面背景 */
+body.search {
     background-color: var(--theme) !important;
 }
 
-/* --- アーカイブページの調整 --- */
-
-/* 年ごとの区切り（2025, 2024...）の色 */
+/* =========================================
+   7. アーカイブページ
+   ========================================= */
 .archive-year {
-    margin-top: 40px;
+    margin: 20px 0 10px 0 !important;
+    text-align: left !important;
 }
 
 .archive-year h2 {
     color: var(--primary) !important;
     border-bottom: 2px solid var(--primary);
     padding-bottom: 5px;
-    font-family: 'DotGothic16', sans-serif !important;
+    padding-right: 20px;
+    display: inline-block;
+    font-size: 28px !important;
 }
 
-/* 月ごとのグループ */
 .archive-month {
+    display: block !important;
+    margin: 10px 0 !important;
+    font-size: 20px !important;
+    color: var(--secondary) !important;
+    text-align: left !important;
+}
+
+.archive-entry {
     display: flex;
     align-items: center;
-    padding: 10px 0;
     position: relative;
-    transition: all 0.2s;
+    padding: 8px 0 8px 40px !important;
+    height: auto !important;
+    margin-bottom: 5px;
 }
 
-/* アーカイブ内の各記事タイトル */
-.archive-entry {
-    position: relative;
-    padding-left: 40px !important; /* ▶用のスペース */
+.archive-meta {
+    margin-right: 15px;
+    font-size: 16px;
+    min-width: 50px;
+    display: inline-block;
+    color: var(--secondary) !important;
 }
 
-/* 記事タイトルの色 */
-.archive-entry .entry-name {
-    color: var(--content) !important;
-    font-family: 'DotGothic16', sans-serif !important;
+/* アーカイブのホバー演出 */
+.archive-entry:hover .entry-name {
+    color: var(--primary) !important;
+    padding-left: 10px;
+    transition: padding 0.2s;
 }
 
-/* マウスを乗せた時の「▶」点滅演出 */
 .archive-entry:hover::before {
     content: "\25B6\FE0E";
     position: absolute;
@@ -293,104 +260,17 @@ body.search, main.main {
     animation: cursor-blink 0.8s infinite !important;
 }
 
-/* ホバー時に文字を少し明るく、右にずらす */
-.archive-entry:hover .entry-name {
-    color: var(--primary) !important;
-    padding-left: 10px;
-}
-
-/* --- 404ページ（ゲームオーバー風） --- */
-/* 404ページのページ全体を黒くする */
-.error-404 {
+/* =========================================
+   8. 404ページ (ゲームオーバー風)
+   ========================================= */
+body.error-404 {
+    background-color: var(--theme) !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
-    background-color: var(--theme) !important;
+    min-height: 80vh;
     text-align: center;
-}
-
-/* "404" の文字を巨大な赤い警告にする */
-.error-404 h1 {
-    font-size: 100px !important;
-    color: #ff0000 !important;
-    font-family: 'DotGothic16', sans-serif !important;
-    text-shadow: 5px 5px #440000;
-    margin-bottom: 20px;
-}
-
-/* "Page not found" の文字を「ゲームオーバー」風に変更するテクニック */
-/* 元の文字を透明にして、新しい文字を浮かび上がらせます */
-.error-404 h1 + div {
-    font-size: 0 !important; /* 元の英文を消す */
-}
-
-.error-404 h1 + div::before {
-    content: "つうしんが　とだえました。";
-    font-size: 24px !important;
-    color: var(--primary) !important;
-    font-family: 'DotGothic16', sans-serif !important;
-    display: block;
-    margin-bottom: 40px;
-}
-
-/* 戻るボタンを「コンティニュー」風に */
-.error-404 a {
-    font-size: 20px !important;
-    color: var(--content) !important;
-    text-decoration: none !important;
-    font-family: 'DotGothic16', sans-serif !important;
-}
-
-.error-404 a::before {
-    content: "▶ リスタートする";
-    animation: cursor-blink 0.8s infinite;
-}
-
-/* アーカイブの年（2025）の表示を左寄せにして、余白を削る */
-.archive-year {
-    margin: 20px 0 10px 0 !important;
-    text-align: left !important;
-}
-
-.archive-year h2 {
-    font-size: 28px !important;
-    border-bottom: 2px solid var(--primary);
-    display: inline-block; /* 線を文字の長さに合わせる */
-    padding-right: 20px;
-}
-
-/* 気持ち悪い「月の表示（December）」を整理する */
-.archive-month {
-    display: block !important; /* 中央寄せを解除してブロック化 */
-    margin: 10px 0 !important;
-    font-size: 20px !important;
-    color: var(--secondary) !important;
-    font-family: 'DotGothic16', sans-serif !important;
-    text-align: left !important;
-}
-
-/* 各記事のリスト（entry）の並びを整える */
-.archive-entry {
-    display: flex;
-    align-items: center;
-    height: auto !important;
-    padding: 8px 0 8px 40px !important; /* 左側に余裕を持たせて▶を置く */
-    margin-bottom: 5px;
-}
-
-/* 日付（3日など）を横に並べる */
-.archive-meta {
-    margin-right: 15px;
-    font-size: 16px;
-    min-width: 50px; /* 日付の幅を揃える */
-    display: inline-block;
-}
-
-/* 404ページ全体の背景を黒くし、中央に寄せる */
-body.error-404 {
-    background-color: var(--theme) !important;
 }
 
 body.error-404 .main {
@@ -398,37 +278,34 @@ body.error-404 .main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
 }
 
-/* 404のタイトル（数字）を大きく赤くする */
+/* タイトル "404" */
 body.error-404 h1 {
     font-size: 80px !important;
     color: #ff0000 !important;
-    font-family: 'DotGothic16', sans-serif !important;
     text-shadow: 4px 4px #440000;
     margin-bottom: 20px;
 }
 
-/* もともとある「404 Page not found」という文字を消して、
-   日本語のメッセージを無理やり差し込む */
+/* 元のテキストを隠して日本語を表示 */
 body.error-404 .head-wrapper,
 body.error-404 .not-found {
-    font-size: 0 !important; /* 元の文字を隠す */
+    font-size: 0 !important;
 }
 
 body.error-404 .main::after {
     content: "つうしんが　とだえました。";
     display: block;
-    font-size: 20px;
-    color: var(--primary);
+    font-size: 24px !important;
+    color: var(--primary) !important;
     font-family: 'DotGothic16', sans-serif !important;
     margin-bottom: 40px;
 }
 
-/* ホームへ戻るボタンを点滅する「▶ リスタート」にする */
+/* ボタン書き換え */
 body.error-404 #home-link {
-    font-size: 0 !important; /* 元の「Home」を消す */
+    font-size: 0 !important;
 }
 
 body.error-404 #home-link::before {
@@ -440,7 +317,9 @@ body.error-404 #home-link::before {
     animation: cursor-blink 0.8s infinite;
 }
 
-/* 共通設定 */
+/* =========================================
+   9. チャットバルーン
+   ========================================= */
 .chat-balloon {
     display: flex;
     margin-bottom: 2px;
@@ -450,11 +329,11 @@ body.error-404 #home-link::before {
 .chat-icon {
     flex-shrink: 0;
     text-align: center;
-    width: 70px; /* アイコンのサイズ */
+    width: 70px;
 }
 
 .chat-icon img {
-    width: 50px !important; /* PaperModの画像スタイルを上書き */
+    width: 50px !important;
     height: 50px;
     border-radius: 50%;
     margin: 0 auto 5px !important;
@@ -470,66 +349,51 @@ body.error-404 #home-link::before {
     position: relative;
     padding: 15px 20px;
     border-radius: 15px;
-    background: var(--theme); /* 背景色 */
-     border: 4px double var(--primary) !important; /* 4pxの太さで二重線にする */
+    background: var(--theme);
+    border: 4px double var(--primary) !important;
     margin: 10px 20px;
     max-width: 70%;
     line-height: 1.5;
 }
 
-
-/* 右側（タルパ用）のスタイル */
+/* 右側（タルパ用） */
 .chat-balloon.right {
     flex-direction: row-reverse;
 }
 
 .chat-balloon.right .chat-text {
     margin: 10px 15px 0 0;
-    background: var(--theme); /* タルパ側の色（お好みで変えてください） */
 }
 
-/* --- 独自の区切り線（点線） --- */
-.footer-divider {
-    margin: 40px 0 20px 0;
-    border-top: 4px dotted var(--primary);
-}
-
-/* --- 前後の記事ナビゲーション（ステータスバー風） --- */
-
+/* =========================================
+   10. ナビゲーション & フッター & 関連記事
+   ========================================= */
+/* 記事下ページネーション */
 .paginav {
     margin: 40px 0 !important;
     background: transparent !important;
     display: flex;
-    gap: 15px; /* 箱同士を離す */
-    border-top: none !important;
-    border-bottom: none !important;
+    gap: 15px;
+    border: none !important;
 }
 
 .paginav a {
     position: relative;
     padding: 15px 20px !important;
     background: var(--theme) !important;
-
+    border: 2px solid var(--primary) !important;
     outline: 2px solid var(--primary);
     outline-offset: -4px;
-    border: 2px solid var(--primary) !important;
     width: 50%;
+    border-radius: 0px !important;
 }
-
 
 .paginav a:hover {
     background: var(--entry) !important;
-}
-
-.paginav a:hover, 
-.paginav a:focus,
-.paginav a span:hover {
     text-decoration: none !important;
     box-shadow: none !important;
 }
 
-
-/* 「前の記事」「次の記事」のラベルをバッジ風にする */
 .paginav .title {
     font-size: 11px !important;
     color: var(--theme) !important;
@@ -542,8 +406,37 @@ body.error-404 #home-link::before {
     left: 10px;
 }
 
-/* 関連記事（related.html）も同じにならないように調整 */
-/* single.html側のhrを消して、こちらで「点線」の区切りにする */
+/* 1. 通常時およびホバー時のすべての装飾をリセット */
+.paginav a,
+.paginav a span,
+.main .paginav a,
+.main .paginav a:hover,
+.main .paginav a:focus {
+    text-decoration: none !important;      /* 標準の下線 */
+    background-image: none !important;    /* PaperMod特有の下線（グラデーション） */
+    box-shadow: none !important;           /* 影（今回の原因の可能性が高い） */
+}
+
+/* 2. ホバー時の挙動を「背景色の変化」のみに限定 */
+.paginav a:hover {
+    background-color: var(--entry) !important;
+    /* transitionを入れると滑らかになります */
+    transition: background-color 0.2s ease;
+}
+
+/* 3. タイトル（前の記事・次の記事ラベル）の干渉防止 */
+.paginav .title {
+    background-image: none !important;
+    text-decoration: none !important;
+}
+
+/* フッター区切り線 */
+.footer-divider {
+    margin: 40px 0 20px 0;
+    border-top: 4px dotted var(--primary);
+}
+
+/* 関連記事 */
 .related-content {
     margin-top: 50px;
     padding: 20px;
@@ -551,42 +444,29 @@ body.error-404 #home-link::before {
 
 .related-content ul {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 横に2つ並べる */
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     list-style: none !important;
+    padding: 0;
 }
 
 .related-content li {
     background: var(--tertiary);
     padding: 10px;
-    border-left: 5px solid var(--primary); /* 左側だけに色をつけてアクセントに */
+    border-left: 5px solid var(--primary);
 }
 
-/* 関連記事もホバーで少しだけ色を変える（下線は出さない） */
 .related-content li:hover {
     background: var(--entry) !important;
 }
 
-/* スマホ用（1列にする） */
 @media screen and (max-width: 768px) {
     .related-content ul {
         grid-template-columns: 1fr;
     }
 }
-html, 
-body, 
-#top, 
-main.main, 
-.main,
-.page-main {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-}
 
-[data-theme=dark] html,
-[data-theme=dark] body,
-[data-theme=dark] #top,
-[data-theme=dark] .main {
-    background: var(--theme) !important;
-    background-color: var(--theme) !important;
+/* その他微調整: 太陽・月アイコン */
+#theme-toggle svg {
+    font-family: sans-serif !important;
 }

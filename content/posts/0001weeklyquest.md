@@ -4,7 +4,7 @@ date: 2026-01-11T22:40:38+09:00
 draft: false
 tags:
   - "デブリーフィング"
-  - "タグ2"
+  - "読書記録"
 categories:
   - "Weekly Quest"
 ---
