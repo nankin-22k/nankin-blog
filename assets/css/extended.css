@@ -10,8 +10,6 @@
     --tertiary: #eeeeee ;
     --content: #2c3e50 ;   /* 本文の黒 */
     --chat_wakusen: #ff0303 ; /*チャットの枠線の色*/
-    --nankincoler: #fbfbfb ;   /*南瓜カラー*/ 
-    --nanomecoler: #d60000 ;  /*なむちカラー*/
 }
 
 /* --- 3. ダークモード（[data-theme=dark] 時） --- */
@@ -22,8 +20,6 @@
     --content: #c1dfbe ;  /* 本文：白に近い薄い緑（これで読みやすくなります） */
     --chat_wakusen: #f40000 ;
     --tertiary: #1a2a1a ;  /* ダークモード用の背景色を暗く固定 */
-    --nankincoler: #e2007c ;   /*南瓜カラー*/ 
-    --nanomecoler: #2f075a ;  /*なむちカラー*/
 }
 
 /* --- 4. 見た目への適用 --- */
@@ -576,4 +572,21 @@ body.error-404 #home-link::before {
     .related-content ul {
         grid-template-columns: 1fr;
     }
+}
+html, 
+body, 
+#top, 
+main.main, 
+.main,
+.page-main {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
+
+[data-theme=dark] html,
+[data-theme=dark] body,
+[data-theme=dark] #top,
+[data-theme=dark] .main {
+    background: var(--theme) !important;
+    background-color: var(--theme) !important;
 }
