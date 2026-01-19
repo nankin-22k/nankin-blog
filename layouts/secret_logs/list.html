@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+{{/* 1. 導入文の表示 */}}
+{{ if .Content }}
+<div class="post-content">
+  {{ .Content }}
+</div>
+{{ end }}
+
+{{/* 3. 記事一覧の取得（アーカイブなどの固定ページを除外） */}}
+<div class="post-wrapper">
+{{- /* layoutが "archives" ではない、通常の見出し記事だけを取得します */ -}}
+{{- $pages := where .Paginator.Pages "Params.layout" "!=" "archives" }}
+
+{{- range $pages }}
+    <article class="post-entry">
+        <header class="entry-header">
+            <h2>{{ .Title }}</h2>
+        </header>
+        {{- if .Summary }}
+        <div class="entry-content">
+            <p>{{ .Summary | plainify | htmlUnescape }}...</p>
+        </div>
+        {{- end }}
+        <footer class="entry-footer">
+            {{ .Date.Format "2006-01-02" }}
+        </footer>
+        <a class="entry-link" href="{{ .Permalink }}"></a>
+    </article>
+{{- end }}
+</div>
+
+{{/* 4. ページネーション（記事が多い場合の次へボタン） */}}
+{{- if gt .Paginator.TotalPages 1 }}
+<footer class="page-footer">
+    <nav class="pagination">
+        {{- if .Paginator.HasPrev }}
+        <a class="prev" href="{{ .Paginator.Prev.URL | absURL }}">« Prev</a>
+        {{- end }}
+        {{- if .Paginator.HasNext }}
+        <a class="next" href="{{ .Paginator.Next.URL | absURL }}">Next »</a>
+        {{- end }}
+    </nav>
+</footer>
+{{- end }}
+
+{{ end }}

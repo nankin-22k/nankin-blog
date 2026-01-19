@@ -1,2 +1,17 @@
-{{- $common := resources.Get "css/extended.css" | resources.Minify }}
+{{- /* 全ページ共通・または表の記事用のCSS */ -}}
+{{- $common := resources.Get "css/extended/main.css" | resources.Minify -}}
 <link rel="stylesheet" href="{{ $common.Permalink }}">
+
+{{- /* 裏セクション（secret_logs）にいる時だけ追加で読み込む */ -}}
+{{- if (or (eq .Section "secret_logs") (eq .Type "secret_tags") (eq .Type "secret_categories")) -}}
+    
+    {{- /* 検索エンジンへの強い拒絶（noindex） */ -}}
+    <meta name="robots" content="noindex, nofollow">
+
+    {{- /* 裏専用CSS（secret.css） */ -}}
+    {{- $secret := resources.Get "css/extended/secret.css" | resources.Minify -}}
+    {{- if $secret -}}
+        <link rel="stylesheet" href="{{ $secret.Permalink }}">
+    {{- end -}}
+
+{{- end -}}

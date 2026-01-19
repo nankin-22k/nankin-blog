@@ -5,5 +5,8 @@ sitemap:
   disable: true
 cascade:
   robots: "noindex"
-  secret_categories: ["Log"]
 ---
+# Tulpamancy Log
+- このログはタルパとの対話記録です。
+- 検索窓で「Tulpamancy Log」「タルパ」と調べると入ることができます。
+- **南瓜の家**をクリックしてトップページに戻れます。  

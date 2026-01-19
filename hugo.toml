@@ -3,9 +3,6 @@ languageCode = 'ja-jp'
 title = "南瓜の家"
 theme = "PaperMod"
 
-[outputs]
-    home = ["HTML", "RSS", "JSON"]
-
 [markup.goldmark.renderer]
     unsafe = true
 
@@ -64,6 +61,33 @@ theme = "PaperMod"
     url = "/search/"
     weight = 50
 
+[[menu.secret]]
+    name = "投稿一覧"
+    url = "/restricted-area/" # 裏のトップ（_index.mdで設定したURL）
+    weight = 10
+
+[[menu.secret]]
+    name = "カテゴリー"
+    url = "/secret_categories/" # 裏専用カテゴリーの一覧
+    weight = 20
+
+[[menu.secret]]
+    name = "タグ"
+    url = "/secret_tags/" # 裏専用タグの一覧
+    weight = 30
+
+[[menu.secret]]
+    name = "アーカイブ"
+    url = "/restricted-area/secret_archives/"
+    weight = 40
+
+[[menu.secret]]
+    name = "検索"
+    # ※裏専用の検索ページを作る予定ならそのURL、
+    # とりあえずタグ一覧で代用するならタグのURLでも可
+    url = "/restricted-area/secret_search/" 
+    weight = 50
+
 [related]
     threshold = 60
     includeNewer = true
@@ -84,3 +108,17 @@ theme = "PaperMod"
 
 [permalinks]
   posts = "/posts/:slug/"
+
+  # 1. 出力形式の定義（既存の [outputs] を拡張）
+[outputFormats]
+  [outputFormats.SECRET_JSON]
+    baseName = "index.secret"
+    mediaType = "application/json"
+    isPlainText = true
+    notAlternative = true
+
+# 2. 検索ページでの出力指定
+[outputs]
+  home = ["HTML", "RSS", "JSON", "SECRET_JSON"]
+  page = ["HTML"]
+  section = ["HTML"]

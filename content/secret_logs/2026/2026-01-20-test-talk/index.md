@@ -10,3 +10,7 @@ secret_tags:
 secret_categories:
   - "カテゴリー"
 ---
+{{< chat name="南瓜" img="/images/hidarigao.png" side="left" >}}
+今日はチャットの導入をしているよ。  
+とっても大変だね。
+{{< /chat >}}
