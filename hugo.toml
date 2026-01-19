@@ -16,10 +16,11 @@ theme = "PaperMod"
     assets.disableFingerprinting = true
     showPostNavLinks = true
     ShowRelatedContent = true
+    mainSections = ["posts"]
 
     [params.homeInfoParams]
         Title = "南瓜の家へようこそ"
-        Content = "ここは南琴（なんきん）の個人ブログです。日々の出来事や興味のあることをのんびり綴っていきます。"
+        Content = "家主の南瓜です。日々に出来事や活動、考えたことを綴る個人ブログです。自己管理や技術などが主なテーマになると思います。"
 
     [[params.socialIcons]]
         name = "github"
@@ -28,6 +29,12 @@ theme = "PaperMod"
     [params.search]
         mainSections = ["posts"]
         searchFields = ["title", "content", "summary"]
+
+    [taxonomies]
+  category = "categories"
+  tag = "tags"
+  secret_category = "secret_categories"
+  secret_tag = "secret_tags"
 
 # --- メニュー設定 ---
 [[menu.main]]
