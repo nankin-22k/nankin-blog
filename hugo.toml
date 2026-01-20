@@ -52,7 +52,7 @@ theme = "PaperMod"
 [[menu.main]]
     identifier = "archives"
     name = "アーカイブ"
-    url = "/archives/"
+    url = "/post/archives/"
     weight = 40
 
 [[menu.main]]
