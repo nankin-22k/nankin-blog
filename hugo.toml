@@ -3,6 +3,9 @@ languageCode = 'ja-jp'
 title = "南瓜の家"
 theme = "PaperMod"
 
+[pagination]
+  pagerSize = 10
+
 [markup.goldmark.renderer]
     unsafe = true
 
@@ -122,3 +125,4 @@ theme = "PaperMod"
   home = ["HTML", "RSS", "JSON", "SECRET_JSON"]
   page = ["HTML"]
   section = ["HTML"]
+
