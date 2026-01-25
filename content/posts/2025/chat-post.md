@@ -1,7 +1,7 @@
 ---
 title: "チャットを導入するよ"
 date: 2025-12-31T15:43:35+09:00
-draft: false
+draft: true
 tags:
   - ""
   - "サイト制作"
