@@ -6,7 +6,7 @@ draft: false
 tags:
   - "イベント"
   - "勉強"
-  - "ブリーフィング"
+  - "デブリーフィング"
 categories:
   - "Weekly Quest"
 ---

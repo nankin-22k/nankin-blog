@@ -3,7 +3,7 @@ title: "あけましておめでとうございます"
 date: 2026-01-04T14:56:11+09:00
 draft: false
 tags:
-  - "ブリーフィング"
+  - "デブリーフィング"
   - "挨拶"
 categories:
   - "Weekly Quest"

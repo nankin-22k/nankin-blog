@@ -5,7 +5,7 @@ slug: "0003weekly"
 draft: false
 tags:
   - "デブリーフィング"
-  - "ブリーフィング"
+  - ""
 categories:
   - "Weekly Quest"
 ---

@@ -4,7 +4,7 @@ date: 2026-02-01T23:07:46+09:00
 slug: "nisyuu_houkoku"
 draft: false
 tags:
-  - "ブリーフィング"
+  - ""
   - "デブリーフィング"
   - "新ブログ"
   - "技術"
