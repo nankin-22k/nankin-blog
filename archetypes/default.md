@@ -4,8 +4,8 @@ date: {{ .Date }}
 slug: "{{ .Name | replaceRE `^[0-9]{4}-[0-9]{2}-[0-9]{2}-` `` | lower }}"
 draft: false
 tags:
-  - "タグ1"
-  - "タグ2"
+  - ""
+  - ""
 categories:
-  - "カテゴリー"
+  - "未分類"
 ---
