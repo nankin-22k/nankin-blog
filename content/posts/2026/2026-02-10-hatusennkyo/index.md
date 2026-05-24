@@ -1,5 +1,5 @@
 ---
-title: "初めての選挙に行きました"
+title: "初めての選挙に行きましたよ"
 date: 2026-02-10T18:54:23+09:00
 slug: "hatusennkyo"
 draft: false
